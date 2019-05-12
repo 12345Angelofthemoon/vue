@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery.js" charset="utf-8"></script>
+    <script>
+    $.ajax({
+      url: 'data/1.json',
+      dataType: 'json'
+    }).then(json=>$.ajax({
+      url: json.url,
+      dataType: 'json'
+    })).then(json=>$.ajax({
+      url: json.url,
+      dataType: 'json'
+    })).then(json=>{
+      console.log(json);
+    }).catch(err=>{
+      console.log(err);
+    });
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

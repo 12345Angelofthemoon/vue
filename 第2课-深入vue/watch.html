@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+    <script>
+    let arr=['apple', 'apply', 'app', 'bear', 'beef', 'zoo'];
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <input type="text" v-model="kw">
+      <ul>
+        <li v-for="s in list">{{s}}</li>
+      </ul>
+    </div>
+    <script>
+      let vm=new Vue({
+        el: '#root',
+        data: {
+          kw: '',
+          list: []
+        },
+        watch: {
+          kw(){
+            if(!this.kw){
+              this.list=[];
+            }else{
+              this.list=arr.filter(str=>str.startsWith(this.kw.toLowerCase()));
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

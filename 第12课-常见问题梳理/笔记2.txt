@@ -1,0 +1,85 @@
+部署：
+1.打包
+  yarn run build
+
+2.安装nginx
+  yum install nginx -y
+
+3.启动nginx
+  systemctl start nginx
+
+4.关闭防火墙
+  iptables -F
+
+5.清除掉测试文件
+  cd /usr/share/nginx/html
+  rm ./* -rf
+
+6.文件上传到服务器（winscp）
+  
+
+*7.nginx转发
+
+
+
+
+
+
+
+买虚拟机：
+1.空间——网页、PHP、ASP、数据库
+2.虚拟主机——完整linux
+
+备案：
+
+
+------------------------------------------------------------------------------------
+
+vue-cli3
+2种——默认、手动
+
+------------------------------------------------------------------------------------
+
+组件：
+name
+  树形控件
+
+------------------------------------------------------------------------------------
+
+vuex
+  辅助对象
+    mapState      state.数据 -> computed
+
+    computed: {
+      ...mapState({
+        xxx: state=>state.xxx
+      })
+    }
+
+
+    mapActions  action -> methods
+    mapGetters  getter -> computed
+
+  模块
+
+router
+  history  ->  window.history  兼容高级浏览器、需要后台甩锅（fallback）；好看
+  hash     ->  location.hash    兼容任何浏览器、无需后台配合；难看
+
+
+------------------------------------------------------------------------------------
+
+
+
+
+computed  数据->数据
+watch         数据->操作
+
+
+
+
+
+
+
+
+

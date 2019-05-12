@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li v-for="val,key in json">{{key}}. {{val}}</li>
+      </ul>
+
+      <input type="button" value="按钮" @click="fn()">
+    </div>
+    <script>
+    let vm=new Vue({
+      el: '#root',
+      data: {
+        json: {
+          a: 12,
+          b: 55
+        }
+      },
+      methods: {
+        fn(){
+          this.json=Object.assign({}, this.json, {c: 99, d: 88});
+        }
+      }
+    });
+    </script>
+  </body>
+</html>

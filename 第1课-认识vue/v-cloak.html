@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+    <style media="screen">
+    *[v-cloak] {display:none;}
+    </style>
+  </head>
+  <body>
+    <div id="root" v-cloak>
+      {{a}}, {{b}}
+    </div>
+    <script src="http://localhost:8080/xxx" charset="utf-8"></script>
+    <script>
+    let vm=new Vue({
+      el: '#root',
+      data: {
+        a: 12, b: 5
+      },
+      methods: {
+        fn(){
+          this.json=Object.assign({}, this.json, {c: 99, d: 88});
+        }
+      }
+    });
+    </script>
+  </body>
+</html>

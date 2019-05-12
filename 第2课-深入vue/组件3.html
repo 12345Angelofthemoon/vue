@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <blue/>
+    </div>
+    <script>
+    let Blue=Vue.extend({
+      data(){
+        return {};
+      },
+      template: '<span>1111</span>'
+    });
+
+    //测试场景
+    let obj=new Blue();
+    let oDiv=document.createElement('div');
+    obj.$mount(oDiv);
+
+    if(obj.$el.innerHTML=='1111'){
+      alert('组件正常');
+    }else{
+      alert('有问题');
+    }
+
+
+
+    let vm=new Vue({
+      el: '#root',
+      data: {
+
+      },
+      components: {
+        blue: Blue
+      }
+    });
+    </script>
+  </body>
+</html>

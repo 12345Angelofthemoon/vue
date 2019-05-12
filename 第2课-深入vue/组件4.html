@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <blue name="blue" :age="18"/>
+    </div>
+    <script>
+    //全局组件
+    Vue.component('blue', {
+      props: ['name', 'age'],
+      data(){
+        return {
+
+        };
+      },
+      template: `
+        <div>
+          姓名：{{name}}<br/>
+          年龄：{{age+1}}
+        </div>
+      `,
+    });
+
+
+    let vm=new Vue({
+      el: '#root',
+      data: {
+
+      },
+    });
+    </script>
+  </body>
+</html>

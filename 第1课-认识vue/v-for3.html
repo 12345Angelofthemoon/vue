@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li v-for="arr2 in arr">
+          <div v-for="item in arr2">
+            {{item}}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script>
+    let vm=new Vue({
+      el: '#root',
+      data: {
+        arr: [
+          [1,2,3],
+          [5,6,7],
+          [8,9,10]
+        ],
+        json: {
+          a: 55,
+          b: 88,
+          c: 99
+        }
+      },
+    });
+    </script>
+  </body>
+</html>

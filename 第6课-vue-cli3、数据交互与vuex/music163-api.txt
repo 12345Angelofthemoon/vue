@@ -1,0 +1,6 @@
+获取榜单列表：
+http://localhost:8081/api/list
+
+获取
+http://localhost:8081/api/detail/<id>
+

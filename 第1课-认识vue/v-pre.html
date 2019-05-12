@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="" v-pre>
+        {{a}}, {{b}}
+      </div>
+    </div>
+    <script>
+    let vm=new Vue({
+      el: '#root',
+      data: {
+        a: 12, b: 5
+      },
+      methods: {
+        fn(){
+          alert('aaa');
+        },
+        fn2(){
+          alert('bbb');
+        }
+      }
+    });
+    </script>
+  </body>
+</html>

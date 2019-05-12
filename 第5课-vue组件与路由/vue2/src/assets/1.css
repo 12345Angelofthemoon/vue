@@ -1,0 +1,9 @@
+.box {
+  width: 200px;
+}
+
+.box2 {
+  width: 200px;
+  height: 200px;
+  background: url(./img2.jpg) no-repeat;
+}

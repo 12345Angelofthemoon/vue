@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/vue.js" charset="utf-8"></script>
+    <script src="js/pagination.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <zns-page :count="3000" :cur="1"></zns-page>
+    </div>
+
+    <script>
+    let vm=new Vue({
+      el: '#root',
+
+    })
+    </script>
+  </body>
+</html>

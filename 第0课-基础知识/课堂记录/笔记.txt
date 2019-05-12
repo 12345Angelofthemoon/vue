@@ -1,0 +1,154 @@
+ES6异步操作
+  同步——卡住，一次一个
+  异步——一次多个，编写费劲
+    $.ajax({
+      url: xxx,
+      success(){},
+      error(){}
+    });
+  回调
+
+  promise：对异步代码的封装
+
+  p.then(success, error);
+  p.then(success).then(success).then(success).catch(error);
+  p.then(success).then(success).then(success).catch(error).finally();
+
+  配合：
+  Promise.all([   //并行
+    p1,p2,p3,...
+  ]).then.catch
+
+  async function show(){
+    await 异步操作;
+  }
+
+  await后面能放什么？
+  - 同步代码：12、'strgsfg'、fn()
+  - 异步代码：promise、async
+  - 不能空的
+
+-----------------------------
+
+  async陷阱：串行
+
+-----------------------------
+
+模块化：ES6、node
+  ES6
+
+  导出：
+  export let a=12;
+  export function show(){};
+  export class xxx{};
+  export default xxx;
+
+  import {a,b,c} from './xxx';
+  import xxx from './xxx';
+
+  node（CMD）
+  exports.a=12;
+  exports.b=5;
+
+  module.exports={};
+  module.exports=function ();
+
+  引入自己定义的模块
+  1.加：./xxx
+  2.放进node_modules——不推荐
+
+webpack
+  1.安装
+  npm i -g webpack webpack-cli
+
+  2.编写webpack.config.js
+  const path=require('path');
+
+  module.exports={
+    mode: 'development'/'production',
+    entry: './index',
+    output: {
+      path: path.resolve(__dirname, 'build'),
+      filename: 'bundle.js'
+    }
+  };
+
+渲染——数据+模板
+  服务端渲染(ssr：server-sider render)：jsp、ejs、...
+    在服务端组装好，把结果丢给前台
+    1.seo友好
+    2.安全性高
+
+    3.带宽、性能
+    4.用户体验不好
+
+  客户端渲染(csr、wsr)：Vue、react、...
+    服务端只提供数据，由前端完成组装
+    1.seo不友好
+    2.安全性不高
+
+    3.性能高
+    4.用户体验好
+
+  users: [
+    {name: 'blue', age： 18},
+    {name: '张三', age: 25}
+  ]
+
+        +
+
+  <ul>
+    <li v-for="user in users">
+      姓名：{{user.name}}
+      年龄：{{user.age}}
+    </li>
+  </ul>
+
+        =
+
+  <ul>
+    <li>
+      姓名：blue
+      年龄：18
+    </li>
+    <li>
+      姓名：张三
+      年龄：25
+    </li>
+  </ul>
+
+MVC：
+M-Model       数据
+V-View        视图（html） -> 模板
+C-Controller  逻辑
+
+逻辑、html混在一起
+for(let i=0;i<arr.length;i++){
+  if(arr[i].data){
+    str+='<div>aaa</div>';
+  }
+}
+
+M-数据
+V-html
+C-js代码    杂
+
+--------------------------------------
+
+Vue(MVVM)
+M-数据
+V-html
+VM-表现层js代码
+C-业务逻辑js代码
+
+<input type="text" v-model="a" />
+
+--------------------------------------
+
+vue
+
+--------------------------------------
+
+Php既然也是mvc为什么还要前端套数据呢。。。。。php也算前后端分离？
+
+--------------------------------------

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="root">
+      <input type="text" v-model="name"> , <input type="text" v-model="name"> <br/>
+      <input type="text" v-model="age"> , <input type="text" v-model="age">
+    </div>
+    <script>
+    let _data={
+      name: 'blue',
+      age: 18
+    };
+
+    let data=new Proxy(_data, {
+      get(obj, name){
+        return obj[name];
+      },
+      set(obj, name, value){
+        obj[name]=value;
+
+        //通知HTML更新了
+        dataToHtml();
+
+        // $watch[name] && $watch[name]();
+      }
+    });
+
+    let aTxt=Array.from(document.querySelectorAll('#root input'));
+
+    //初始化
+    dataToHtml();
+
+    aTxt.forEach(oTxt=>{
+      oTxt.oninput=function (){
+        htmlToData(this);
+      };
+    });
+
+    function htmlToData(oTxt){
+      let name=oTxt.getAttribute('v-model');
+      data[name]=oTxt.value;
+    }
+
+    function dataToHtml(){
+      aTxt.forEach(oTxt=>{
+        let name=oTxt.getAttribute('v-model');
+        oTxt.value=data[name];
+      });
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+    <script>
+    let arr=['apple', 'apply', 'app', 'bear', 'beef', 'zoo'];
+    </script>
+  </head>
+  <body>
+    <div id="root">
+    </div>
+    <script>
+      let vm=new Vue({
+        el: '#root',
+        data: {
+          a: 12,
+        },
+        watch: {
+          a(){
+            console.log('a变了');
+            this.a-=5;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

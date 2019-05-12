@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div v-html="str"></div>
+    </div>
+    <script>
+    let vm=new Vue({
+      el: '#root',
+      data: {
+        str: '你好<strong>啊啊</strong>啊啊'
+      },
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <button type="button" @click="fn()">按钮</button>
+      <div v-if="show">
+        box
+      </div>
+      <div></div>
+      <div v-else>
+        box2
+      </div>
+    </div>
+    <script>
+    let vm=new Vue({
+      el: '#root',
+      data: {
+        show: true
+      },
+      methods: {
+        fn(){
+          this.show=!this.show;
+        }
+      }
+    });
+    </script>
+  </body>
+</html>

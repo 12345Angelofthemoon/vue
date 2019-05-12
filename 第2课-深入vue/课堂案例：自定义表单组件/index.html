@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/dialog.css">
+    <script src="../vue.js" charset="utf-8"></script>
+    <script src="js/button.js" charset="utf-8"></script>
+    <script src="js/dialog.js" charset="utf-8"></script>
+    <script src="js/table.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <zns-button @click="fn()" type="primary">
+        弹出对话框
+      </zns-button>
+      <zns-dialog ref="dia1" title="对话框aaa">
+
+      </zns-dialog>
+      <zns-table
+        :cols="cols"
+        :rows="rows"
+        @delete="fnDelete"
+      />
+    </div>
+    <script>
+    let vm=new Vue({
+      el: '#root',
+      data: {
+        cols: [
+          {name: 'title', label: '名称'},
+          {name: 'price', label: '价格'},
+          {name: 'count', label: '数量'},
+        ],
+        rows: [
+          {title: 'xxxx衣服', price: 56.5, count: 800},
+          {title: 'xxxx裤子', price: 36.5, count: 1200},
+          {title: '上衣', price: 16.5, count: 80},
+          {title: 'aaaa', price: 8.5, count: 1900},
+        ]
+      },
+      methods: {
+        fn(){
+          this.$refs.dia1.open();
+        },
+        fnDelete(row){
+          console.log('想删除', row);
+        }
+      }
+    })
+    </script>
+  </body>
+</html>

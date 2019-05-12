@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      class Zue{
+        constructor(options){
+          this.$el=document.querySelector(options.el);
+          this.$data=options.data;
+
+          this._render();
+        }
+
+        _render(){
+          let renderElement=node=>{
+            Array.from(node.childNodes).forEach(el=>{
+              switch(el.nodeType){
+                case document.ELEMENT_NODE: //1
+                  renderElement(el);
+                  break;
+                case document.TEXT_NODE:    //3
+                  el.data=el.data.replace(/\{\{\w+\}\}/g, str=>{
+                    let name=str.substring(2, str.length-2);
+
+                    return this.$data[name];
+                  });
+                  break;
+              }
+            });
+          }
+
+          renderElement(this.$el);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      姓名：{{name}}<br>
+      年龄：{{age}}
+    </div>
+    <script>
+      let zm=new Zue({
+        el: '#root',
+        data: {
+          name: 'blue',
+          age: 18
+        }
+      });
+    </script>
+  </body>
+</html>

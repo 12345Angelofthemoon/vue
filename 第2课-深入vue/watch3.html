@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+    <script>
+    let arr=['apple', 'apply', 'app', 'bear', 'beef', 'zoo'];
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      {{json}}
+    </div>
+    <script>
+      let vm=new Vue({
+        el: '#root',
+        data: {
+          a: 12,
+          b: 5,
+          arr: [55, 66, 33],
+          json: {
+            n1: 11,
+            n2: 22,
+            n3: 33
+          }
+        },
+        watch: {
+          a(){
+            console.log('a变化了');
+          },
+          arr(){
+            console.log('arr变化了');
+          },
+          json(){   //浅层监视
+            console.log('json变化了');
+          },
+          'json.n1'(){
+            console.log('json.n1变了');
+          }
+        }
+      });
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <button type="button" @click="fn(12, 6, $event)">按钮</button>
+    </div>
+    <script>
+    let vm=new Vue({
+      el: '#root',
+      data: {
+        user: {
+          name: 'blue',
+          age: 18
+        }
+      },
+      methods: {
+        fn(a, b, ev){
+          alert(a+b);
+          console.log(ev);
+        }
+      }
+    });
+    </script>
+  </body>
+</html>

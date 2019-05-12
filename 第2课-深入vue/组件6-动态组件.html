@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <input type="text" v-model="name">
+      <component :is="name" />
+    </div>
+    <script>
+    //全局组件
+    Vue.component('blue1', {
+      data(){
+        return {};
+      },
+      template: `
+        <div>
+          aaa
+        </div>
+      `,
+    });
+    Vue.component('blue2', {
+      data(){
+        return {};
+      },
+      template: `
+        <div>
+          bbb
+        </div>
+      `,
+    });
+
+
+    let vm=new Vue({
+      el: '#root',
+      data: {
+        name: ''
+      },
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery.js" charset="utf-8"></script>
+
+    <script>
+    (async ()=>{
+      console.log('aaaa');
+
+      await (async ()=>{
+        let data1=await $.ajax('data/1.json');
+        let data2=await $.ajax(data1.url);
+        let data3=await $.ajax(data2.url);
+
+        console.log(data3);   //[12,5,8]
+      })();
+
+      let a=await 12;
+      console.log(a);
+
+      console.log('bbbb');
+    })();
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

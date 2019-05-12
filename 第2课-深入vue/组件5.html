@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <blue :a="12" :b="55"/>
+    </div>
+    <script>
+    let Blue=Vue.extend({
+      props: ['a', 'b'],
+      data(){
+        return {};
+      },
+      template: '<span>{{a+b}}</span>'
+    });
+
+    //测试场景
+    let obj=new Blue({
+      propsData: {
+        a: 12, b: 55
+      }
+    });
+    let oDiv=document.createElement('div');
+    obj.$mount(oDiv);
+
+    if(obj.$el.innerHTML=='67'){
+      alert('组件正常');
+    }else{
+      alert('有问题');
+    }
+
+
+
+
+
+    let vm=new Vue({
+      el: '#root',
+      data: {
+
+      },
+      components: {
+        blue: Blue
+      }
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input, i, b { margin: 0; padding: 0; border: 0; font-weight:normal; font-style:normal;}
+ul, ol { list-style-type: none; }
+select, input, img { vertical-align: middle; outline: none; }
+a { text-decoration: none; }
+a { blr:"expression(this.onFocus=this.blur())"}
+a { outline: none; }
+html { overflow-x: hidden; }
+.clearfix:after { content: ""; display: block; clear: both; }
+.clearfix { zoom: 1; }
+.fl { float: left; }
+.fr { float: right; }
+
+body {color:#222;background:#f4f5f7;}
+
+.page {width:1280px; margin:0 auto;}
+header {
+  width:1280px; height:200px;
+  background:url(../img/bg.webp) no-repeat;
+  position:relative;
+}
+.gradient {position:absolute;width:1280px;height:93px;background:url(../img/gradient.png);left:0;bottom:0;}
+.user-info {
+  position:absolute;
+  left:20px;bottom:16px;
+}
+.user-info .avatar {
+  width:64px;height:64px;
+  border-radius:50%;
+  border:2px solid hsla(0,0%,100%,.4)
+}
+.user-info .user {
+  margin-left:20px;
+  margin-top:10px;
+  width:735px;
+}
+.user-info .user .name {
+  color:#FFF;
+  font-size:18px; line-height:18px;
+  font-weight:700;
+}
+.user-info .user .signature{
+  height:26px;line-height:26px;
+  color:#d6dee4;
+  font-size:12px;
+  margin-top:8px;
+}
+.user-info .user .signature input {
+  color:#d6dee4;
+  background: transparent;
+  border-radius:4px;
+  height:26px;line-height:26px;
+  width:725px;
+  padding:0 5px;
+  margin-left:-5px;
+  transition:.3s all ease;
+}
+.user-info .user .signature input:hover {
+  background:hsla(0,0%,100%,.2);
+  border:0 0 0 1px hsla(0,0%,100%,.5);
+}
+.user-info .user .signature input:focus {
+  background:#fff;
+  box-shadow:inset 0 2px 4px rgba(35,54,86,.3);
+  color:#6d757a;
+}
+
+nav {
+  width:1240px;height:66px;
+  padding-left:20px;
+  padding-right:20px;
+  background:#FFF;
+  margin-bottom:10px;
+}
+
+nav .icon {
+  display:inline-block;
+  width:20px;height:20px;
+  background:url(../img/icons.png) no-repeat;
+  position:relative;
+  top:4px;
+}
+
+nav .icon-1 {background-position:0 0;}
+nav .icon-2 {background-position:-20px 0;}
+nav .icon-3 {background-position:-40px 0;}
+nav .icon-4 {background-position:-60px 0;}
+nav .icon-4 {background-position:-80px 0;}
+
+nav a {height:66px;line-height:66px;margin-right:31px;color:#222;font-size:13px;}
+
+nav a.active {
+  color:#00a1d6;
+}
+
+section.content {border:1px solid #EEE; border-radius:4px; background:#FFF;}
+
+
+.uper-info .item {
+  width:58px;height:46px;
+  padding:10px 0;
+  text-align:center;
+}
+.uper-info .name {margin-top:5px;line-height:14px; font-size:12px;color:#99a2aa}
+.uper-info .value {line-height:16px;margin-top:5px;color:#222;font-size:12px;}
+
+
+.content {
+  padding:20px;
+}
+.content .img {
+  width:280px; height:175px;box-shadow: 0 0 0 1px #e5e9ef;
+  border-radius:4px; overflow:hidden;
+}
+.content .img img {width:100%;height:100%;}
+.content .banner-info {
+  margin-left:20px;
+}
+.content .banner-info h3 a {
+  font-size:14px;
+  color:#222;
+}
+.banner-info .info {margin-top:15px;}
+.banner-info .info-item {
+  margin-right:20px;
+}
+.icons2 {
+  background:url(../img/icons2.png) no-repeat;
+  display:inline-block;
+  width:12px;height:12px;
+}
+.i1 {background-position:0 0;}
+.i2 {background-position:-12px 0;}
+.i3 {background-position:-24px 0;}
+
+.banner-info .desc {
+  margin-top:10px;
+  overflow:hidden;
+  width:400px;height:40px;line-height:20px;
+  font-size:12px;
+  color:#99a2aa;
+}
+.banner-info .recommend {
+  margin-top:10px;
+  color:#f25d8e;
+  height:20px;line-height:20px;
+  font-size:12px;font-weight:400;
+}
+
+
+.course-list {margin-top:30px;}
+.course-list .course-title {}
+.course-list .course-title .title {
+  font-size:20px;
+  line-height:22px;
+}
+.course-list .course-title .count {
+  width:20px;height:20px;line-height:20px;text-align:center;
+  background:#f7f7f7;
+  border:1px solid #ddd;
+  border-radius:50%;
+  margin-left:4px;
+}
+.course-list .course-title .tabs {
+  margin-left:10px;
+}
+.course-list .course-title .tabs a {font-size:12px; line-height:22px; margin-left:20px;color:#222;}
+.course-list .course-title .tabs a.active {color:#00a1d6}
+
+.course-list .course-items {
+  margin-top:20px;
+}
+.course-list .course-item {
+  width:160px; height:164px;
+  padding:10px;padding-left:0;
+}
+.course-list .course-item img {
+  border-radius:4px;
+}
+.course-list .course-item a {
+  font-size:12px;font-weight:400;color:#222;
+}
+.course-list .course-item img {width:160px;height:100px;}
+.course-list .info {margin-top:4px;}
+.course-list .info-item {width:72px;font-size:12px;color:#999;}

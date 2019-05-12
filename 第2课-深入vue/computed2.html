@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      {{year}}, {{month}}, {{day}}<br>
+      <input type="text" v-model="date">
+    </div>
+    <script>
+      let vm=new Vue({
+        el: '#root',
+        data: {
+          year: 2019,
+          month: 3,
+          day: 28
+        },
+        methods: {
+
+        },
+        computed: {
+          date: {
+            get(){
+              return this.year+'-'+this.month+'-'+this.day;
+            },
+            set(val){
+              let arr=val.split('-').map(s=>Number(s));
+
+              this.year=arr[0];
+              this.month=arr[1];
+              this.day=arr[2];
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

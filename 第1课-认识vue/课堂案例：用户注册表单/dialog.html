@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/dialog.css">
+    <script src="js/vue.js" charset="utf-8"></script>
+    <script src="js/agree.js" charset="utf-8"></script>
+    <style media="screen">
+    *[v-cloak] {display:none!important;}
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!--dialog-->
+      <div class="dialog-shadow" v-if="show"></div>
+      <div class="panel panel-default dialog-panel" v-if="show" v-cloak>
+        <div class="panel-heading">
+          <h2 class="panel-title">
+            注册
+            <a href="#" class="glyphicon glyphicon-remove pull-right" @click="close()"></a>
+          </h2>
+        </div>
+        <div class="panel-body">
+          <!--内容-->
+          <form class="form-horizontal">
+
+            <!-- 步骤1 -->
+            <div class="step1" v-if="step==1">
+              <div class="agreement" v-html="agree_txt"></div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" v-model="check"> 同意注册协议
+                </label>
+              </div>
+            </div>
+
+            <!-- 步骤2 -->
+            <div class="step2" v-if="step==2">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="username">用户名</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="username" name="username" v-model="form.name" placeholder="请输入用户名">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="password">密码</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="password" name="password" v-model="form.password" placeholder="请输入密码">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="password2">重复密码</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="password2" v-model="form.password2" placeholder="再输入一次密码">
+                </div>
+              </div>
+            </div>
+
+            <!-- 步骤3 -->
+            <div class="step3" v-if="step==3">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">用户名</label>
+                <div class="col-sm-10">
+                  <p class="form-control-static">{{form.name}}</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="mobile">手机</label>
+                <div class="col-sm-10">
+                  <input type="tel" class="form-control" id="mobile" name="mobile" v-model="form.mobile" placeholder="仅支持中国大陆手机">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="email">邮箱</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="email" name="email" v-model="form.email" placeholder="请使用常用邮箱">
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="btn-group pull-right">
+            <button type="button" class="btn btn-default" v-if="step>1" @click="prev()">后退</button>
+
+            <button type="button" class="btn btn-primary" v-if="step==3" :disabled="!valid()" @click="submit()">提交</button>
+            <button type="button" class="btn btn-primary" :disabled="!valid()" v-else @click="next()">下一步</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js" charset="utf-8"></script>
+  </body>
+</html>

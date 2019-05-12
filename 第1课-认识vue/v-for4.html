@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li v-for="json,index in arr" :key="index">
+          名称：{{json.title}}，价格：￥{{json.price}}
+        </li>
+      </ul>
+    </div>
+    <script>
+    let vm=new Vue({
+      el: '#root',
+      data: {
+        arr: [
+          {title: '裤子', price: 56.5},
+          {title: '上衣', price: 16.5},
+          {title: '帽子', price: 76.5},
+        ],
+      },
+    });
+    </script>
+  </body>
+</html>

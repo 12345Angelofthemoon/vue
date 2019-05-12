@@ -1,0 +1,3 @@
+.dialog-panel {position:fixed; left: 50%; top: 200px; width: 800px; margin-left:-400px; z-index:99;}
+.dialog-shadow {position:fixed; left: 0; top:0; width:100%; height:100%; background:#000; opacity:0.3; z-index:98;}
+.agreement {height:400px;overflow:auto;}
